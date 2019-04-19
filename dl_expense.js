@@ -5,8 +5,8 @@
    Tutorial 13
    Case Problem 2
 
-   Author: 
-   Date:   
+    Author: Jose Felix
+    Date:   4.18.19
    
    Filename: dl_expenses.js
    
@@ -31,7 +31,9 @@
       
 */
 
-
+function validateSummary() {
+      
+}
 
 
 
