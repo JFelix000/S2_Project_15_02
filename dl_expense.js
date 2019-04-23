@@ -31,15 +31,43 @@
       
 */
 
+window.addEventListener("load", function () {
+      var changingCells = document.querySelectorAll('input[class="sum"]');
+      for (var i = 0; i < changingCells.length; i++) {
+            changingCells[i].onchange = calcExp();
+      }
+      document.getElementById("submitButton").onclick = validateSummary;
+});
+
 function validateSummary() {
-      
+      var summary = document.getElementById("summary");
+      if (summary.validity.valueMissing) {
+            summary.setCustomValidity("You must include the summary of the trip in your report.");
+      } else {
+            summary.setCustomValidity("");
+      }
 }
 
+function calcClass (sumClass) {
+      var sumFields = document.getElementsByClassName("sumClass");
+      var sumTotal = 0;
+      for (var i = sumFields[0]; i < sumFields.length; i++) {
+            var itemValue = parseFloat(sumFields[i].value); // current input element
+            if (!isNaN(itemValue)) {
+                  sumTotal += itemValue;
+            }
+            return sumTotal;
+      }
+}
 
+function calcExp() {
+      var expTable = document.querySelectorAll("table#travelExp tbody tr");
+      for (var i = 0; ) {
+            
+      }
+}
 
-
-
-
+// dont touch
 function formatNumber(val, decimals) {
    return val.toLocaleString(undefined, {minimumFractionDigits: decimals, 
                                          maximumFractionDigits: decimals});
